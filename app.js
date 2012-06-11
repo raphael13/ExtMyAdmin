@@ -2,6 +2,10 @@ Ext.require([
     'Ext.direct.*'
 ]);
 
+Ext.onReady(function(){
+    Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);
+});
+
 Ext.application({
     requires: ['Ext.container.Viewport'],
     name: 'EJMA',
@@ -13,7 +17,6 @@ Ext.application({
     ],
 
     launch: function() {
-        Ext.direct.Manager.addProvider(Ext.app.REMOTING_API);            
     
         Ext.create('Ext.container.Viewport', {
             layout: 'fit',
