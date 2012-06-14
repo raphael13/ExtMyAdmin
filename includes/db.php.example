@@ -1,0 +1,21 @@
+<?php
+
+define('CLIENT_LONG_PASSWORD', 1);
+
+$iServerIP = '';
+$iUserName = '';
+$iPassword = '';
+$iDB = '';
+
+$con = mysql_connect($iServerIP, $iUserName, $iPassword, false, CLIENT_LONG_PASSWORD);
+
+if ($con) {
+	$db_selected = mysql_select_db($iDB, $con);
+
+	if (!$db_selected)
+	{
+		die ("Can\'t use db : " . mysql_error());
+	}
+} else {
+    die('Could not connect: ' . mysql_error());
+}

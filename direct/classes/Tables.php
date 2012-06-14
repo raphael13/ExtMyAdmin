@@ -2,8 +2,13 @@
 class Tables {
 
     function Get($data){
-        die ('Roey');
-        return $data;
+        
+        return array(
+            'success' => true,
+            'tables' => array(
+                'name' => 'Roey'
+            )
+        );
     }
 
 }
